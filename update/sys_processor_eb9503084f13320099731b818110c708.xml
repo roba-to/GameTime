@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_processor">
+    <sys_processor action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <description>Insert players into the Game Players table with a True/False for whether they are playing or not&#13;
+Source is the Email that is sent by X GameTimeNow notification</description>
+        <interactive>false</interactive>
+        <name>InsertGamePLayer</name>
+        <parameters/>
+        <params_endpoint/>
+        <path>insert_game_player</path>
+        <path_endpoint>x_132328_gametimen_insert_game_player</path_endpoint>
+        <require_csrf>false</require_csrf>
+        <roles/>
+        <script><![CDATA[insertGamePlayer(g_request, g_processor);
+
+function insertGamePlayer(g_request, g_processor) {
+	var player = "";
+	var playing = g_request.getParameter('playing');
+	
+	var grp = new GlideRecord('x_132328_gametimenow_player');
+	grp.addQuery('player',gs.getUserID());
+	grp.query();
+	if(grp.next()){
+		player = grp.sys_id;
+	}
+	var gr = new GlideRecord('x_132328_gametimenow_game_players');
+	gr.query();
+	gr.player = player;
+	gr.playing = true;
+	gr.insert();
+	g_processor.redirect("nav_to.do?uri=%2Fx_132328_gametimenow_game_players_list.do");
+	//g_processor.redirect("/aPageThatExist.do");
+}
+]]></script>
+        <sys_class_name>sys_processor</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-07 09:56:41</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>eb9503084f13320099731b818110c708</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>InsertGamePLayer</sys_name>
+        <sys_package display_value="GameTimeNow" source="x_132328_gametimen">128ab2404f13320099731b818110c7ae</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="GameTimeNow">128ab2404f13320099731b818110c7ae</sys_scope>
+        <sys_update_name>sys_processor_eb9503084f13320099731b818110c708</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-06-07 09:57:27</sys_updated_on>
+        <type>script</type>
+    </sys_processor>
+</record_update>

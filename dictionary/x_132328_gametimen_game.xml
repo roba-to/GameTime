@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Game" max_length="40" name="x_132328_gametimen_game" type="collection">
+        <element display="true" label="Game Date" mandatory="true" max_length="40" name="game_date" type="glide_date_time"/>
+        <element choice="1" label="Location" max_length="40" name="location" type="choice">
+            <choice>
+                <element label="Sport Court" sequence="0"/>
+                <element label="The Park" sequence="0"/>
+            </choice>
+        </element>
+    </element>
+</database>

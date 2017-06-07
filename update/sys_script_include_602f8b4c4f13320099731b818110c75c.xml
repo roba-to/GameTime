@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_132328_gametimen.relatedTaskCounts</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>relatedTaskCounts</name>
+        <script><![CDATA[var relatedTaskCounts = Class.create();
+relatedTaskCounts.prototype = {
+    initialize: function() {
+    },
+	
+	getRecordCount: function(record, field){
+		var recsBySameUser = new GlideRecord(record.getTableName());
+		recsBySameUser.addQuery(field, record[field]);
+		recsBySameUser.query();
+		
+		var recCount = recsBySameUser.getRowCount();
+		
+		return recCount;
+	},
+
+    type: 'RelatedTaskCounts'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-07 10:34:36</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>602f8b4c4f13320099731b818110c75c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>relatedTaskCounts</sys_name>
+        <sys_package display_value="GameTimeNow" source="x_132328_gametimen">128ab2404f13320099731b818110c7ae</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="GameTimeNow">128ab2404f13320099731b818110c7ae</sys_scope>
+        <sys_update_name>sys_script_include_602f8b4c4f13320099731b818110c75c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-06-07 10:41:49</sys_updated_on>
+    </sys_script_include>
+</record_update>

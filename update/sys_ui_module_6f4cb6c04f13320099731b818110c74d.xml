@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Game Players">a34cb6c04f13320099731b818110c74c</application>
+        <filter/>
+        <name>Game Players</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_132328_gametimen.game_players_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-07 09:09:29</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6f4cb6c04f13320099731b818110c74d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Game Players</sys_name>
+        <sys_package display_value="GameTimeNow" source="x_132328_gametimen">128ab2404f13320099731b818110c7ae</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="GameTimeNow">128ab2404f13320099731b818110c7ae</sys_scope>
+        <sys_update_name>sys_ui_module_6f4cb6c04f13320099731b818110c74d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-06-07 09:09:29</sys_updated_on>
+        <table>x_132328_gametimen_game_players</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>
